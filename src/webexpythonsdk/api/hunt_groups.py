@@ -106,3 +106,47 @@ class HuntGroupsAPI(object):
         json_data = self._session.post(API_ENDPOINT, json=post_data)
 
         return self._object_factory(OBJECT_TYPE, json_data)
+
+    def update(
+        self,
+        hunt_group_id,
+        name=None,
+        extension=None,
+        **request_parameters,
+    ):
+        """Update a hunt group.
+
+        Updates an existing hunt group by ID.
+        See: https://developer.webex.com/calling/docs/api/v1/features-hunt-group/
+        update-a-hunt-group
+
+        Args:
+            hunt_group_id(str): The ID of the hunt group to update.
+            name(str): A user-friendly name for the hunt group (optional).
+            extension(str): The extension for the hunt group (optional).
+            **request_parameters: Additional request body parameters (e.g.
+                phoneNumber, callRoutingPattern, agents, etc.).
+
+        Returns:
+            ImmutableData: The updated hunt group object.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            ApiError: If the Webex cloud returns an error.
+
+        """
+        check_type(hunt_group_id, str)
+        check_type(name, str, optional=True)
+        check_type(extension, str, optional=True)
+
+        put_data = dict_from_items_with_values(
+            request_parameters,
+            name=name,
+            extension=extension,
+        )
+
+        json_data = self._session.put(
+            API_ENDPOINT + "/" + hunt_group_id, json=put_data
+        )
+
+        return self._object_factory(OBJECT_TYPE, json_data)
