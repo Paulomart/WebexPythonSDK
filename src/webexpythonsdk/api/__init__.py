@@ -59,6 +59,7 @@ from .meeting_invitees import MeetingInviteesAPI
 from .meeting_registrants import MeetingRegistrantsAPI
 from .hunt_groups import HuntGroupsAPI
 from .call_queues import CallQueuesAPI
+from .call_pickup import CallPickupAPI
 
 import os
 
@@ -258,6 +259,7 @@ class WebexAPI(object):
         )
         self.hunt_groups = HuntGroupsAPI(self._session, object_factory)
         self.call_queues = CallQueuesAPI(self._session, object_factory)
+        self.call_pickup = CallPickupAPI(self._session, object_factory)
 
     @property
     def access_token(self):
