@@ -37,6 +37,9 @@ from .attachment_actions import AttachmentActionsAPI
 from .events import EventsAPI
 from .guest_issuer import GuestIssuerAPI
 from .licenses import LicensesAPI
+from .location_call_settings_voicemail import (
+    LocationCallSettingsVoicemailAPI,
+)
 from .locations import LocationsAPI
 from .memberships import MembershipsAPI
 from .messages import MessagesAPI
@@ -219,6 +222,9 @@ class WebexAPI(object):
         self.events = EventsAPI(self._session, object_factory)
         self.guest_issuer = GuestIssuerAPI(self._session, object_factory)
         self.licenses = LicensesAPI(self._session, object_factory)
+        self.location_call_settings_voicemail = (
+            LocationCallSettingsVoicemailAPI(self._session, object_factory)
+        )
         self.locations = LocationsAPI(self._session, object_factory)
         self.memberships = MembershipsAPI(self._session, object_factory)
         self.messages = MessagesAPI(self._session, object_factory)
