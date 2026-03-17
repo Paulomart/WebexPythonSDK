@@ -15,6 +15,17 @@
 |                        | :ref:`licenses`           | :meth:`list() <webexpythonsdk.api.licenses.LicensesAPI.list>`                   |
 |                        |                           | :meth:`create() <webexpythonsdk.api.licenses.LicensesAPI.create>`               |
 +------------------------+---------------------------+---------------------------------------------------------------------------------+
+|                        | :ref:`locations`          | :meth:`list() <webexpythonsdk.api.locations.LocationsAPI.list>`                 |
+|                        |                           | :meth:`get() <webexpythonsdk.api.locations.LocationsAPI.get>`                   |
+|                        |                           | :meth:`create() <webexpythonsdk.api.locations.LocationsAPI.create>`             |
+|                        |                           | :meth:`update() <webexpythonsdk.api.locations.LocationsAPI.update>`             |
+|                        |                           | :meth:`delete() <webexpythonsdk.api.locations.LocationsAPI.delete>`             |
+|                        |                           | :meth:`list_floors() <webexpythonsdk.api.locations.LocationsAPI.list_floors>`   |
+|                        |                           | :meth:`get_floor() <webexpythonsdk.api.locations.LocationsAPI.get_floor>`       |
+|                        |                           | :meth:`create_floor() <webexpythonsdk.api.locations.LocationsAPI.create_floor>` |
+|                        |                           | :meth:`update_floor() <webexpythonsdk.api.locations.LocationsAPI.update_floor>` |
+|                        |                           | :meth:`delete_floor() <webexpythonsdk.api.locations.LocationsAPI.delete_floor>` |
++------------------------+---------------------------+---------------------------------------------------------------------------------+
 |                        | :ref:`memberships`        | :meth:`list() <webexpythonsdk.api.memberships.MembershipsAPI.list>`             |
 |                        |                           | :meth:`create() <webexpythonsdk.api.memberships.MembershipsAPI.create>`         |
 |                        |                           | :meth:`get() <webexpythonsdk.api.memberships.MembershipsAPI.get>`               |

@@ -41,6 +41,8 @@ from .mixins.attachment_action import AttachmentActionBasicPropertiesMixin
 from .mixins.event import EventBasicPropertiesMixin
 from .mixins.guest_issuer_token import GuestIssuerTokenBasicPropertiesMixin
 from .mixins.license import LicenseBasicPropertiesMixin
+from .mixins.location import LocationBasicPropertiesMixin
+from .mixins.location_floor import LocationFloorBasicPropertiesMixin
 from .mixins.membership import MembershipBasicPropertiesMixin
 from .mixins.message import MessageBasicPropertiesMixin
 from .mixins.organization import OrganizationBasicPropertiesMixin
@@ -222,6 +224,14 @@ class License(ImmutableData, LicenseBasicPropertiesMixin):
     """Webex License data model."""
 
 
+class Location(ImmutableData, LocationBasicPropertiesMixin):
+    """Webex Location data model."""
+
+
+class LocationFloor(ImmutableData, LocationFloorBasicPropertiesMixin):
+    """Webex Location Floor data model."""
+
+
 class Membership(ImmutableData, MembershipBasicPropertiesMixin):
     """Webex Membership data model."""
 
@@ -312,6 +322,8 @@ immutable_data_models = defaultdict(
     attachment_action=AttachmentAction,
     event=Event,
     license=License,
+    location=Location,
+    location_floor=LocationFloor,
     membership=Membership,
     message=Message,
     organization=Organization,

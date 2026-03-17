@@ -31,6 +31,7 @@ from webexpythonsdk.api.access_tokens import AccessTokensAPI
 from webexpythonsdk.api.attachment_actions import AttachmentActionsAPI
 from webexpythonsdk.api.events import EventsAPI
 from webexpythonsdk.api.licenses import LicensesAPI
+from webexpythonsdk.api.locations import LocationsAPI
 from webexpythonsdk.api.memberships import MembershipsAPI
 from webexpythonsdk.api.messages import MessagesAPI
 from webexpythonsdk.api.organization_contacts import OrganizationContactsAPI
@@ -165,6 +166,10 @@ def test_events_api_object_creation(api):
 
 def test_licenses_api_object_creation(api):
     assert isinstance(api.licenses, LicensesAPI)
+
+
+def test_locations_api_object_creation(api):
+    assert isinstance(api.locations, LocationsAPI)
 
 
 def test_memberships_api_object_creation(api):

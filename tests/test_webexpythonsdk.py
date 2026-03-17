@@ -45,6 +45,8 @@ class TestWebexPythonSDK:
         assert hasattr(webexpythonsdk, "AttachmentAction")
         assert hasattr(webexpythonsdk, "Event")
         assert hasattr(webexpythonsdk, "License")
+        assert hasattr(webexpythonsdk, "Location")
+        assert hasattr(webexpythonsdk, "LocationFloor")
         assert hasattr(webexpythonsdk, "Membership")
         assert hasattr(webexpythonsdk, "Message")
         assert hasattr(webexpythonsdk, "Organization")

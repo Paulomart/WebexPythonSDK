@@ -71,6 +71,14 @@ licenses
 .. autoclass:: webexpythonsdk.api.licenses.LicensesAPI()
 
 
+.. _locations:
+
+locations
+---------
+
+.. autoclass:: webexpythonsdk.api.locations.LocationsAPI()
+
+
 .. _memberships:
 
 memberships
@@ -209,6 +217,24 @@ License
 -------
 
 .. autoclass:: License()
+    :inherited-members:
+
+
+.. _Location:
+
+Location
+--------
+
+.. autoclass:: Location()
+    :inherited-members:
+
+
+.. _LocationFloor:
+
+Location Floor
+--------------
+
+.. autoclass:: LocationFloor()
     :inherited-members:
 
 

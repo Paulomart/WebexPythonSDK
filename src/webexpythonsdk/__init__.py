@@ -55,6 +55,8 @@ from .models.immutable import (
     GuestIssuerToken,
     immutable_data_factory,
     License,
+    Location,
+    LocationFloor,
     Meeting,
     MeetingInvitee,
     MeetingRegistrant,
