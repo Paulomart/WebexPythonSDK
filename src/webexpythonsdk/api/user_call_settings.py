@@ -123,3 +123,37 @@ class UserCallSettingsAPI(object):
         json_data = self._session.put(url, json=put_data)
 
         return self._object_factory(OBJECT_TYPE, json_data)
+
+    def configure_caller_id_settings(
+        self,
+        person_id,
+        **request_parameters,
+    ):
+        """Configure caller ID settings for a person.
+
+        Updates the caller ID settings for a user.
+        See: https://developer.webex.com/calling/docs/api/v1/user-call-settings-1-2/
+        configure-caller-id-settings-for-a-person
+
+        Args:
+            person_id(str): The ID of the person (user).
+            **request_parameters: Request body parameters (e.g. outgoingCallerId,
+                selectedCallerIdNumber, etc.).
+
+        Returns:
+            ImmutableData: The response object.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            ApiError: If the Webex cloud returns an error.
+
+        """
+        check_type(person_id, str)
+
+        url = "people/{}/features/callerId".format(person_id)
+
+        put_data = dict_from_items_with_values(request_parameters)
+
+        json_data = self._session.put(url, json=put_data)
+
+        return self._object_factory("caller_id_settings", json_data)
