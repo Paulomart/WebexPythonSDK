@@ -22,7 +22,7 @@ SOFTWARE.
 """
 
 from ..restsession import RestSession
-from ..utils import check_type
+from ..utils import check_type, dict_from_items_with_values
 
 
 OBJECT_TYPE = "shared_line_appearance_members"
@@ -86,5 +86,40 @@ class UserCallSettingsAPI(object):
         )
 
         json_data = self._session.get(url, params=request_parameters)
+
+        return self._object_factory(OBJECT_TYPE, json_data)
+
+    def put_shared_line_appearance_members_new(
+        self,
+        person_id,
+        **request_parameters,
+    ):
+        """Put (update) shared-line appearance members (new).
+
+        Updates the shared-line appearance members for a person.
+        See: https://developer.webex.com/calling/docs/api/v1/user-call-settings-2-2/
+        put-shared-line-appearance-members-new
+
+        Args:
+            person_id(str): The ID of the person (user).
+            **request_parameters: Request body parameters (e.g. members).
+
+        Returns:
+            ImmutableData: The response object.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            ApiError: If the Webex cloud returns an error.
+
+        """
+        check_type(person_id, str)
+
+        url = "people/{}/features/sharedLineAppearance/members".format(
+            person_id
+        )
+
+        put_data = dict_from_items_with_values(request_parameters)
+
+        json_data = self._session.put(url, json=put_data)
 
         return self._object_factory(OBJECT_TYPE, json_data)
